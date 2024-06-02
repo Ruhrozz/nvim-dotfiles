@@ -1,138 +1,138 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
-	vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
-		lazypath,
-	})
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
 end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 
-	----------------------------------------------------------------------
-	-- Hop: jump anywhere in a document with as few keystrokes as possible
-	----------------------------------------------------------------------
+    ----------------------------------------------------------------------
+    -- Hop: jump anywhere in a document with as few keystrokes as possible
+    ----------------------------------------------------------------------
 
-	{
-		"smoka7/hop.nvim",
-		version = "*",
-		opts = {
-			keys = "etovxqpdygfblzhckisuran",
-		},
-	},
+    {
+        "smoka7/hop.nvim",
+        version = "*",
+        opts = {
+            keys = "etovxqpdygfblzhckisuran",
+        },
+    },
 
-	----------------------------------------------------------------------
-	-- NeoTree: browse the file system and other tree like structures
-	----------------------------------------------------------------------
+    ----------------------------------------------------------------------
+    -- NeoTree: browse the file system and other tree like structures
+    ----------------------------------------------------------------------
 
-	{
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v3.x",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons",
-			"MunifTanjim/nui.nvim",
-			-- "3rd/image.nvim",
-		},
-	},
+    {
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons",
+            "MunifTanjim/nui.nvim",
+            -- "3rd/image.nvim",
+        },
+    },
 
-	----------------------------------------------------------------------
-	-- Treesitter: highlight syntax
-	----------------------------------------------------------------------
+    ----------------------------------------------------------------------
+    -- Treesitter: highlight syntax
+    ----------------------------------------------------------------------
 
-	{
-		"nvim-treesitter/nvim-treesitter",
-	},
+    {
+        "nvim-treesitter/nvim-treesitter",
+    },
 
-	----------------------------------------------------------------------
-	-- LSP-config: language server protocol
-	----------------------------------------------------------------------
+    ----------------------------------------------------------------------
+    -- LSP-config: language server protocol
+    ----------------------------------------------------------------------
 
-	{
-		"neovim/nvim-lspconfig",
-	},
+    {
+        "neovim/nvim-lspconfig",
+    },
 
-	----------------------------------------------------------------------
-	-- Mason: manage LSP stuff (linters, formatters, etc.)
-	----------------------------------------------------------------------
+    ----------------------------------------------------------------------
+    -- Mason: manage LSP stuff (linters, formatters, etc.)
+    ----------------------------------------------------------------------
 
-	{
-		"williamboman/mason.nvim",
-	},
+    {
+        "williamboman/mason.nvim",
+    },
 
-	----------------------------------------------------------------------
-	-- CMP: autocomplete
-	----------------------------------------------------------------------
+    ----------------------------------------------------------------------
+    -- CMP: autocomplete
+    ----------------------------------------------------------------------
 
-	{
-		"hrsh7th/nvim-cmp",
+    {
+        "hrsh7th/nvim-cmp",
         dependencies = {
             "hrsh7th/cmp-nvim-lsp",
-        }
-	},
+        },
+    },
 
-	----------------------------------------------------------------------
-	-- Catppuccin: colorscheme
-	----------------------------------------------------------------------
+    ----------------------------------------------------------------------
+    -- Catppuccin: colorscheme
+    ----------------------------------------------------------------------
 
-	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		priority = 1000,
-	},
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000,
+    },
 
-	----------------------------------------------------------------------
-	-- Colorizer: show color in text (#80FF00)
-	----------------------------------------------------------------------
+    ----------------------------------------------------------------------
+    -- Colorizer: show color in text (#80FF00)
+    ----------------------------------------------------------------------
 
-	{
-		"norcalli/nvim-colorizer.lua",
-		event = "BufEnter",
-		opts = { "*" },
-	},
+    {
+        "norcalli/nvim-colorizer.lua",
+        event = "BufEnter",
+        opts = { "*" },
+    },
 
-	----------------------------------------------------------------------
-	-- Telescope: fast project navigation in general
-	----------------------------------------------------------------------
+    ----------------------------------------------------------------------
+    -- Telescope: fast project navigation in general
+    ----------------------------------------------------------------------
 
-	{
-		"nvim-telescope/telescope.nvim",
+    {
+        "nvim-telescope/telescope.nvim",
         dependencies = {
             {
                 "iruzo/ripgrep.nvim",
                 version = "*",
                 build = ':lua require("rg_setup").install_rg()',
-            }
-        }
-	},
+            },
+        },
+    },
 
-	----------------------------------------------------------------------
-	-- Trouble: fast navigation over errors
-	----------------------------------------------------------------------
+    ----------------------------------------------------------------------
+    -- Trouble: fast navigation over errors
+    ----------------------------------------------------------------------
 
-	{
-		"folke/trouble.nvim",
-		dependencies = "nvim-tree/nvim-web-devicons",
-	},
+    {
+        "folke/trouble.nvim",
+        dependencies = "nvim-tree/nvim-web-devicons",
+    },
 
-	----------------------------------------------------------------------
-	-- None-LS: formatting
-	----------------------------------------------------------------------
+    ----------------------------------------------------------------------
+    -- None-LS: formatting
+    ----------------------------------------------------------------------
 
-	{
-		"nvimtools/none-ls.nvim",
-		dependencies = {
-			"nvimtools/none-ls-extras.nvim",
-		},
-	},
+    {
+        "nvimtools/none-ls.nvim",
+        dependencies = {
+            "nvimtools/none-ls-extras.nvim",
+        },
+    },
 
-	----------------------------------------------------------------------
-	-- Autoclose brackets
-	----------------------------------------------------------------------
+    ----------------------------------------------------------------------
+    -- Autoclose brackets
+    ----------------------------------------------------------------------
 
     {
         "m4xshen/autoclose.nvim",
