@@ -4,10 +4,10 @@ vim.g.maplocalleader = " "
 
 local opt = vim.opt
 
--- opt.fileformat = "unix"
--- opt.encoding = "utf-8"
--- opt.fileencoding = "utf-8"
--- opt.spelllang = { "en_us", "ru" }
+opt.fileformat = "unix"
+opt.encoding = "utf-8"
+opt.fileencoding = "utf-8"
+opt.spelllang = { "en_us", "ru" }
 
 opt.tabstop = 4
 opt.shiftwidth = 4
