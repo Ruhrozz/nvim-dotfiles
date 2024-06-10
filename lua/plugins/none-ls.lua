@@ -16,6 +16,7 @@ null_ls.setup({
 
 		-- Yaml
 		null_ls.builtins.formatting.yamlfmt,
+		null_ls.builtins.formatting.yamlfix,
 		null_ls.builtins.diagnostics.yamllint,
 
 		null_ls.builtins.code_actions.gitsigns,
